@@ -25,17 +25,12 @@ app.use(middleware.fourO4Page)
 
 
 
-const port = process.env.PORT || 7219
 console.log(i18n.__('Greet'))
-app.listen(port, () => {
-  console.start(`App is listening on port ${port} using NodeJS version \
-${process.versions.node} With PID: ${process.pid} in ${process.env.APP_MODE} mode`)
-})
-
-
 
 process.on('unhandledRejection', (e: Error) => {
   const promiseCausedProblem = e.stack.split('\n ')
   console.warn(`Unhandled Rejection --> ${e},
   ${promiseCausedProblem[1]}`)
 })
+
+export default app

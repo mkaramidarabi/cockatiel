@@ -10,7 +10,7 @@ function errorHandler(err: GeneralError, data: object, req: Request, res: Respon
     return res.status(403).send('')
   }
   if (err instanceof ExError) {
-    return res.json(err.mutatedError(data))
+    return res.json(err.mutatedError(data, res.__(err.errorKey)))
   } else _logError(err, req)
   _unknownError(res)
 }

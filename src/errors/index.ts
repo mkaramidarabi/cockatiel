@@ -16,11 +16,11 @@ class ExError extends Error implements ExtendedError {
         this.errorKey = errorKey
     }
 
-    mutatedError(data: object) {
+    mutatedError(data: object, description: string) {
         return {
             success: false,
             error: this.code,
-            description: this.message,
+            description,
             data
         }
     }

@@ -2,44 +2,24 @@ import chalk from 'chalk'
 
 console.old_log = console.log
 
-const log = function (...messages: any[]) {
-  let text = ''
-  for (const message of messages) {
-    text += message + ' '
-  }
-  console.old_log(chalk.blue(text))
+const log = function (...messages: string[]) {
+  console.old_log(chalk.blue(_text(messages)))
 }
 
 const start = function (...messages: string[]) {
-  let text = ''
-  for (const message of messages) {
-    text += message + ' '
-  }
-  console.old_log(chalk.bgGreen.bold.black(text))
+  console.old_log(chalk.bgGreen.bold.black(_text(messages)))
 }
 
 const success = function (...messages: string[]) {
-  let text = ''
-  for (const message of messages) {
-    text += message + ' '
-  }
-  console.old_log(chalk.green(text))
+  console.old_log(chalk.green(_text(messages)))
 }
 
 const error = function (...messages: string[]) {
-  let text = ''
-  for (const message of messages) {
-    text += message + ' '
-  }
-  console.old_log(chalk.red(text))
+  console.old_log(chalk.red(_text(messages)))
 }
 
 const warn = function (...messages: string[]) {
-  let text = ''
-  for (const message of messages) {
-    text += message + ' '
-  }
-  console.old_log(chalk.yellow(text))
+  console.old_log(chalk.yellow(_text(messages)))
 }
 
 const defineLogger = () => {
@@ -48,6 +28,14 @@ const defineLogger = () => {
   console.error = error
   console.warn = warn
   console.start = start
+}
+
+const _text = (messages: string[]): string => {
+  let text = ''
+  for (const message of messages) {
+    text += message + ' '
+  }
+  return text
 }
 
 export default defineLogger

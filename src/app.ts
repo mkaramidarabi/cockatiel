@@ -19,7 +19,7 @@ app.use(express.json())
 app.use(cors())
 app.use(i18n.init)
 
-app.get('/', (req, res) => successHandler(req, res, 200, { Greet: i18n.__('Greet') }))
+app.get('/', (req, res) => successHandler(req, res, 200, { Greet: res.__('Greet') }))
 
 app.use(middleware.fourO4Page)
 

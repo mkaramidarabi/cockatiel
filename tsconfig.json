@@ -14,6 +14,7 @@
     "es2015"
   ],
 	"exclude": [
-		"test"
+		"test",
+		"dist"
 	]
 }

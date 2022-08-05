@@ -2,10 +2,11 @@
   "name": "cockatiel-backend",
   "version": "1.0.0",
   "description": "Insurance exchange app",
-  "main": "dist/app.js",
+  "main": "dist/server.js",
   "scripts": {
     "build": "tsc",
-    "start": "tsc && node dist/server.js",
+    "preStart": "rm -rf dist",
+    "Start": "tsc && cp .env* dist/",
     "lint": "eslint . --ext .ts",
     "test": "jest"
   },
@@ -34,6 +35,8 @@
     "chalk": "4.1.2",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "envalid": "^7.3.1",
     "express": "^4.17.1",
     "geoip-lite": "^1.4.5",
     "i18n": "^0.15.0",

@@ -1,8 +1,11 @@
 import app from './app'
+import './config'
+import validateEnv from './utils/validate/env'
 
-const port = process.env.PORT || 7219
+validateEnv()
 
 
+const port = process.env.PORT
 
 app.listen(port, () => {
   console.start(`App is listening on port ${port} using NodeJS version \

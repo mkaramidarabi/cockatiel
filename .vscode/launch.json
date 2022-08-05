@@ -1,26 +1,17 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}/dist/server.js",
-            "preLaunchTask": "tsc: build - tsconfig.json",
-            "outFiles": [
-                "${workspaceFolder}/dist/**/*.js",
-                "${workspaceFolder}/dist/**/*.json"
-            ],
-            "env": {
-                "PORT": "8219",
-                "FORCE_COLOR": "1",
-                "APP_MODE": "DEV"
-            }
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/dist/server.js",
+			"preLaunchTask": "npm: Start",
+			"env": {
+				"APP_MODE": "LOCAL",
+				"FORCE_COLOR": "1"
+			}
+    }
+  ]
 }

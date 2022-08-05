@@ -11,6 +11,10 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
+.vscode/
+
+*.env.*
+!.env.sample
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 

@@ -8,7 +8,7 @@
     "build": "tsc && cp .env* dist/ && cp -rf src/i18n/locales dist/i18n/",
     "lint": "eslint . --ext .ts",
     "test": "jest",
-    "dev": "npm -D install concurrently && APP_MODE=LOCAL concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+    "dev": "npm -D install concurrently && FORCE_COLOR=\"1\" APP_MODE=LOCAL concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
   },
   "repository": {
     "type": "git",

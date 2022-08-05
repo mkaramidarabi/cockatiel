@@ -9,5 +9,5 @@ services:
       - ./:/usr/src/app
       - /usr/src/app/node_modules
     ports:
-      - 8080:8080
+      - 9987:9987
     command: npm run dev

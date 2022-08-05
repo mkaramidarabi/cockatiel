@@ -19,4 +19,8 @@
 	"ts-node": {
 		"files": true
 	},
+	"files": [
+    "src/interfaces/globals.d.ts",
+		"src/interfaces/console.d.ts",
+  ],
 }

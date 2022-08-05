@@ -4,11 +4,11 @@
   "description": "Insurance exchange app",
   "main": "dist/server.js",
   "scripts": {
-    "build": "tsc",
-    "preStart": "rm -rf dist",
-    "Start": "tsc && cp .env* dist/ && cp -rf src/i18n/locales dist/i18n/",
+    "prebuild": "rm -rf dist",
+    "build": "tsc && cp .env* dist/ && cp -rf src/i18n/locales dist/i18n/",
     "lint": "eslint . --ext .ts",
-    "test": "jest"
+    "test": "jest",
+    "dev": "APP_MODE=LOCAL npx nodemon src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -25,8 +25,10 @@
     "@typescript-eslint/eslint-plugin": "^5.31.0",
     "eslint": "^8.20.0",
     "jest": "^28.1.3",
+    "nodemon": "^2.0.19",
     "supertest": "^6.2.4",
     "ts-jest": "^28.0.7",
+    "ts-node": "^10.9.1",
     "typescript": "^4.7.4"
   },
   "dependencies": {

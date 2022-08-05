@@ -7,7 +7,7 @@
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}/dist/server.js",
-			"preLaunchTask": "npm: Start",
+			"preLaunchTask": "npm: build",
 			"env": {
 				"APP_MODE": "LOCAL",
 				"FORCE_COLOR": "1"

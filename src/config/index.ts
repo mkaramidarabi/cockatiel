@@ -5,22 +5,22 @@ import { AppModes } from '../interfaces/enums'
 switch(process.env.APP_MODE) {
   case AppModes.DEV:
     configDotenv({
-      path: resolve(__dirname, "../.env.dev")
+      path: resolve("../.env.dev")
     })
     break
   case AppModes.LOCAL:
     configDotenv({
-      path: resolve(__dirname, "../.env.local")
+      path: resolve(".env.local")
     })
     break
   case AppModes.STAGING:
     configDotenv({
-      path: resolve(__dirname, "../.env.staging")
+      path: resolve(".env.staging")
     })
     break
   case AppModes.PRODUCTION:
     configDotenv({
-      path: resolve(__dirname, "../.env.production")
+      path: resolve("../.env.production")
     })
     break
   default:

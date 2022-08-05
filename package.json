@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "preStart": "rm -rf dist",
-    "Start": "tsc && cp .env* dist/",
+    "Start": "tsc && cp .env* dist/ && cp -rf src/i18n/locales dist/i18n/",
     "lint": "eslint . --ext .ts",
     "test": "jest"
   },

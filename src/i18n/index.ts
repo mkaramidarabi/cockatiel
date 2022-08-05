@@ -7,7 +7,7 @@ function initI18n() {
     locales: ['en', 'fa'],
     defaultLocale: 'en',
     header: 'accept-language',
-    directory: path.join(__dirname.replace('dist', 'src'), 'locales')
+    directory: path.join(__dirname, 'locales')
   })
 }
 

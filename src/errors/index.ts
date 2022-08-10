@@ -1,15 +1,17 @@
+import { ErrorKeys } from "../interfaces/errorKeys"
+
 interface ExtendedError extends Error {
-    httpStatus?: number
-    code?: number
-    errorKey?: string
+    httpStatus: number
+    code: number
+    errorKey: ErrorKeys
 }
 
 class ExError extends Error implements ExtendedError {
-    httpStatus?: number
-    code?: number
-    errorKey?: string
+    httpStatus: number
+    code: number
+    errorKey: ErrorKeys
 
-    constructor(httpStatus: number, code: number, errorKey: string) {
+    constructor(httpStatus: number, code: number, errorKey: ErrorKeys) {
         super()
         this.httpStatus = httpStatus
         this.code = code
@@ -29,7 +31,7 @@ class ExError extends Error implements ExtendedError {
 const ExErrors = {
     Custom: ExError,
     Validation: {
-        Data: new ExError(400, 1, 'InvalidData')
+        Data: new ExError(400, 1, ErrorKeys.InvalidData)
     }
 }
 

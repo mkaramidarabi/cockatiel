@@ -1,5 +1,6 @@
 import { GeoData } from "./geoData"
 import {AppModes} from './enums'
+import {ErrorKeys} from './errorKeys'
 
 
 declare global {
@@ -12,6 +13,10 @@ declare global {
     export interface ProcessEnv {
       PORT: string,
       APP_MODE: AppModes
+    }
+    export interface Error {
+      errorKey: ErrorKeys,
+      code: number
     }
   }
 }

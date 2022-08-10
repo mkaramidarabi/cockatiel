@@ -1,7 +1,7 @@
 import { Request, Response } from "express"
 import { ExError } from "../../errors"
 
-type GeneralError = ExError & Error
+type GeneralError = ExError
 
 function errorHandler(err: GeneralError, data: object, req: Request, res: Response) {
   res.statusCode = err?.httpStatus || 500
@@ -11,7 +11,7 @@ function errorHandler(err: GeneralError, data: object, req: Request, res: Respon
   }
   if (err instanceof ExError) {
     return res.json(err.mutatedError(data, res.__(err.errorKey)))
-  } else _logError(err, req)
+  } else _logError(err)
   _unknownError(res)
 }
 
@@ -23,13 +23,13 @@ const _unknownError = (res: Response) => {
   })
 }
 
-const _logError = (err: Error, req: Request): void => {
-  const [errorReason, errorLocation] = err.stack.split('\n')
-  console.warn(errorReason)
-  console.warn(errorLocation)
-  if (errorLocation.indexOf("/node_modules/axios/") != -1) {
-    console.error(`axios error in url: ${req.url}`)
+const _logError = (err: Error): void => {
+  if (err.stack) {
+    const [errorReason, errorLocation] = err.stack.split('\n')
+    console.error(errorReason)
+    console.error(errorLocation)
   }
+  else console.error(err.message)
 }
 
 module.exports = errorHandler

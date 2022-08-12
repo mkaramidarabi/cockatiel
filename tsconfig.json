@@ -10,12 +10,13 @@
     "outDir": "dist",
 		"noPropertyAccessFromIndexSignature": true,
 		"typeRoots": ["src/interfaces", "node_modules/@types"],
+		"strict": true
   },
 	"exclude": [
 		"test",
 		"dist"
 	],
-	"include": ["src/server.ts", "src/interfaces/*.d.ts", "src/interfaces/enums.ts"],
+	"include": ["src/server.ts", "src/interfaces/*.d.ts", "src/interfaces/generalEnums.ts"],
 	"ts-node": {
 		"files": true
 	},

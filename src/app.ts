@@ -27,10 +27,13 @@ app.use(middleware.fourO4Page)
 
 console.log(i18n.__('Greet'))
 
-process.on('unhandledRejection', (e: Error) => {
-  const promiseCausedProblem = e.stack.split('\n ')
-  console.warn(`Unhandled Rejection --> ${e},
-  ${promiseCausedProblem[1]}`)
+process.on('unhandledRejection', (e: Error | undefined) => {
+  if (e?.stack) {
+    const promiseCausedProblem = e.stack.split('\n ')
+    console.warn(`Unhandled Rejection --> ${e},
+    ${promiseCausedProblem[1]}`)
+  }
+
 })
 
 export default app

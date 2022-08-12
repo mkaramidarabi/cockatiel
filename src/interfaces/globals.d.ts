@@ -1,5 +1,5 @@
 import { GeoData } from "./geoData"
-import {AppModes} from './enums'
+import {AppModes} from './generalEnums'
 import {ErrorKeys} from './errorKeys'
 
 

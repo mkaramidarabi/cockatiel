@@ -1,6 +1,6 @@
 import {config as configDotenv} from 'dotenv'
 import {resolve} from 'path'
-import { AppModes } from '../interfaces/enums'
+import { AppModes } from '../interfaces/generalEnums'
 
 switch(process.env.APP_MODE) {
   case AppModes.DEV:
